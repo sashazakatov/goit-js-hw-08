@@ -15,7 +15,7 @@ refs.feedbackFormRef.addEventListener('submit', onfeedbackFormRefSubmit);
 
 function onFeedbackFormRefInput(){
         const data = { 
-            email: refs.feedbackFormRef.elements.value, 
+            email: refs.feedbackFormEmailRef.value, 
             message: refs.feedbackFormMessageRef.value
         };
         localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(data));
