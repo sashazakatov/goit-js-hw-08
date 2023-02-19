@@ -15,11 +15,12 @@ refs.feedbackFormRef.addEventListener('submit', onfeedbackFormRefSubmit);
 
 function onFeedbackFormRefInput(){
         const data = { 
-            email: refs.feedbackFormRef.elements.input, 
+            email: refs.feedbackFormRef.elements.value, 
             message: refs.feedbackFormMessageRef.value
         };
         localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(data));
 }
+
 function onfeedbackFormRefSubmit(event){
     event.preventDefault();
 
@@ -29,11 +30,14 @@ function onfeedbackFormRefSubmit(event){
     localStorage.removeItem(LOCALSTORAGE_KEY);
     event.target.reset();
 }
+
 function examinationLocalStorageData(){
     const local = localStorage.getItem(LOCALSTORAGE_KEY);
+
     if(!local){
         return;
     }
+
     try{
         const {email, message} = JSON.parse(local);
         refs.feedbackFormEmailRef.value = email;
