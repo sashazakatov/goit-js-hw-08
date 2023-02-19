@@ -1,5 +1,5 @@
-import SimpleLightbox from "simplelightbox";
-import "simplelightbox/dist/simple-lightbox.min.css";
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 // Add imports above this line
 import { galleryItems } from './gallery-items';
 // Change code below this line
@@ -17,4 +17,4 @@ const galleryRef = document.querySelector('.gallery');
 
 galleryRef.innerHTML = createListItemsMarkup(galleryItems);
 
-new SimpleLightbox('.gallery__item', {captionsData: 'alt', captionDelay: 250, sourceAttr:"href"});
+new SimpleLightbox('.gallery__item', {captionsData: 'alt', captionDelay: 250, sourceAttr:'href'});
